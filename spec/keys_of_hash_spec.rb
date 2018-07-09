@@ -1,7 +1,7 @@
 describe 'keys_of' do
 
   let(:animals) { {"sugar glider"=>"Australia","aye-aye"=> "Madagascar","red-footed tortoise"=>"Panama","kangaroo"=> "Australia","tomato frog"=>"Madagascar","koala"=>"Australia"} }
-    
+
   it "returns an array" do
     expect(animals.keys_of('Panama').class).to eq(Array)
   end
@@ -14,6 +14,7 @@ describe 'keys_of' do
 
   it "returns two species in an array for the animal hash when passed the argument 'Madagascar'" do
     result = animals.keys_of('Madagascar')
+    # binding.pry
     ["aye-aye", "tomato frog"].each {|animal| expect(result).to include(animal) }
     expect(result.length).to eq(2)
   end
